@@ -1,0 +1,169 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('fonts/icomoon.eot');
+}
+
+[class^="soc-icon-"], [class*=" soc-icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.soc-icon-googleplus:before {
+	content: "\e600";
+}
+.soc-icon-facebook:before {
+	content: "\e601";
+}
+.soc-icon-instagram:before {
+	content: "\e602";
+}
+.soc-icon-twitter:before {
+	content: "\e603";
+}
+.soc-icon-youtube:before {
+	content: "\e603";
+}
+.soc-icon-feed:before {
+	content: "\e604";
+}
+.soc-icon-youtube:before {
+	content: "\e605";
+}
+.soc-icon-vimeo:before {
+	content: "\e606";
+}
+.soc-icon-flickr:before {
+	content: "\e607";
+}
+.soc-icon-picassa:before {
+	content: "\e608";
+}
+.soc-icon-dribbble:before {
+	content: "\e609";
+}
+.soc-icon-forrst:before {
+	content: "\e60a";
+}
+.soc-icon-deviantart:before {
+	content: "\e60b";
+}
+.soc-icon-steam:before {
+	content: "\e60c";
+}
+.soc-icon-github:before {
+	content: "\e60d";
+}
+.soc-icon-tumblr:before {
+	content: "\e60e";
+}
+.soc-icon-apple:before {
+	content: "\e60f";
+}
+.soc-icon-android:before {
+	content: "\e610";
+}
+.soc-icon-windows8:before {
+	content: "\e611";
+}
+.soc-icon-soundcloud:before {
+	content: "\e612";
+}
+.soc-icon-skype:before {
+	content: "\e613";
+}
+.soc-icon-linkedin:before {
+	content: "\e614";
+}
+.soc-icon-stackoverflow:before {
+	content: "\e615";
+}
+.soc-icon-pinterest:before {
+	content: "\e616";
+}
+.soc-icon-paypal:before {
+	content: "\e617";
+}
+.soc-icon-html5:before {
+	content: "\e618";
+}
+.soc-icon-css3:before {
+	content: "\e619";
+}
+
+.soc-icon-snapchat:before {
+	content: "\e904";
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.arrow {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(/images/arrow-down.png);
+  background-size: contain;
+}
+
+.bounces {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
