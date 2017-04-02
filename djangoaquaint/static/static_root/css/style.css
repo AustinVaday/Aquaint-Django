@@ -640,7 +640,7 @@ you can use the generic selector below, but it's slower:
 	content: "\e901";
 }
 .soc-icon-website:before {
-	content: "www";
+	content: "\e9c9";
 }
 @-moz-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -3841,17 +3841,7 @@ h2.head,
 
 .soc-list .soc-icon-flickr { background: #ff0084; }
 
-
-
-.soc-list .soc-icon-website {
-	background: #767676;
-	height: 62px;
-	font-size: 22px;
-	width: 64px;
-	padding: 25 5 5 5;
-	font-family: Avenir;
-	line-height:0.8;
-}
+.soc-list .soc-icon-website { background: #32CD32; }
 
 #subscribe_form .input-group { margin: 0 auto; }
 

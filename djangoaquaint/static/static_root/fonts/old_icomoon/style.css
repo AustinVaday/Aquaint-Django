@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?v5sckf');
-  src:  url('fonts/icomoon.eot?v5sckf#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?v5sckf') format('truetype'),
-    url('fonts/icomoon.woff?v5sckf') format('woff'),
-    url('fonts/icomoon.svg?v5sckf#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6d2f28');
+  src:  url('fonts/icomoon.eot?6d2f28#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6d2f28') format('truetype'),
+    url('fonts/icomoon.woff?6d2f28') format('woff'),
+    url('fonts/icomoon.svg?6d2f28#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -110,26 +110,5 @@
 }
 .icon-snapchat:before {
   content: "\e902";
-}
-.icon-sphere:before {
-  content: "\e9c9";
-}
-.icon-earth:before {
-  content: "\e9ca";
-}
-.icon-embed:before {
-  content: "\ea7f";
-}
-.icon-embed2:before {
-  content: "\ea80";
-}
-.icon-chrome:before {
-  content: "\ead9";
-}
-.icon-firefox:before {
-  content: "\eada";
-}
-.icon-opera:before {
-  content: "\eade";
 }
 

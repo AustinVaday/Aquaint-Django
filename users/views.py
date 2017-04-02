@@ -20,7 +20,9 @@ def info(request, user):
                 if key == "tumblr":
                     data.accounts[key][valIndex] = "blog?blogName=" + values[valIndex]
                 if key == "linkedin":
-                    data.accounts[key][valIndex] = "profile/view?id=" + values[valIndex]
+                    if not values[valIndex].startswith('company/'):
+                        data.accounts[key][valIndex] = "profile/view?id=" + values[valIndex]
+
 
     context = {
         'error':0,
