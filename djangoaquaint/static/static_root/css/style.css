@@ -545,7 +545,7 @@ you can use the generic selector below, but it's slower:
 
 
 [class^="soc-icon-"], [class*=" soc-icon-"] {
-	font-family: 'icomoon' !important;
+	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -638,6 +638,9 @@ you can use the generic selector below, but it's slower:
 }
 .soc-icon-snapchat:before {
 	content: "\e901";
+}
+.soc-icon-website:before {
+	content: "www";
 }
 @-moz-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -3837,6 +3840,18 @@ h2.head,
 .soc-list .soc-icon-pinterest { background: #cb2027; }
 
 .soc-list .soc-icon-flickr { background: #ff0084; }
+
+
+
+.soc-list .soc-icon-website {
+	background: #767676;
+	height: 62px;
+	font-size: 22px;
+	width: 64px;
+	padding: 25 5 5 5;
+	font-family: Avenir;
+	line-height:0.8;
+}
 
 #subscribe_form .input-group { margin: 0 auto; }
 
