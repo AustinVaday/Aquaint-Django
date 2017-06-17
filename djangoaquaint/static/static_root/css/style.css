@@ -1097,8 +1097,8 @@ img.mfp-img {
 
 /*--------------------- FONT (OPEN SANS) IMPORT FROM GOOGLE FONTS ----------------------*/
 
-/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700); 
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,500);*/ 
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,500);*/
 /* Copy and paste the above, below, to prevent render blocking */
 
 /***** Open Sans *****/
@@ -1483,7 +1483,7 @@ blockquote small{
 .form-group input,
 .input-group input,
 .form-group textarea,
-button { 
+button {
 	color: #222;
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -1729,17 +1729,21 @@ button {
 
 .bg-picture {
         background: url(../images/oceanBackground.png) no-repeat;
-        background-size: cover; 
-        background-position: center top; 
+        background-size: cover;
+        background-position: center top;
 }
 
 
 .bg-picture1 {
         background: url(../images/oceanBackground2.png) no-repeat;
-        background-size: cover; 
-        background-position: center top; 
+        background-size: cover;
+        background-position: center top;
 }
-
+.bg-picture2 {
+        background: url(../images/iphone-alone.jpg) no-repeat;
+        background-size: cover;
+        background-position: center top;
+}
 .bg-color-main { background-color: #00aeff; }
 
 .bg-color2 { background-color: RGB(15, 122, 157);
@@ -1864,7 +1868,7 @@ button {
 
 .panel-body{padding:20px 25px;}
 
-.tab-content{ 
+.tab-content{
 	border-right:1px solid #ddd;
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #ddd;
@@ -1893,7 +1897,7 @@ section { padding: 80px 0; }
 
 .item-list-right h3,
 .item-list-left h3 { margin: 0 0 10px 0; }
- 
+
 } @media (max-width: 767px) {
 
 h1 { font-size: 40px; }
@@ -1926,7 +1930,7 @@ h4 { font-size: 18px; }
 
 .item-list-right.item-list-big li,
 .item-list-left.item-list-big li { padding: 0 0 40px 0; }
- 
+
 .nav-tabs>li{
 	float:none;
 }
@@ -2012,12 +2016,12 @@ h4 { font-size: 18px; }
 	animation: battery-load 5s linear 10s infinite;
 }
 
-@-webkit-keyframes battery-load { 
+@-webkit-keyframes battery-load {
 0% {width: 0px;}
 100% {width: 36px;}
 }
 
-@keyframes battery-load { 
+@keyframes battery-load {
 0% {width: 0px;}
 100% {width: 36px;}
 }
@@ -2051,12 +2055,12 @@ h4 { font-size: 18px; }
 	transform-origin: center bottom;
 }
 
-@-webkit-keyframes rotation { 
+@-webkit-keyframes rotation {
 0% {-webkit-transform: rotate(0deg);}
 100% {-webkit-transform: rotate(360deg);}
 }
 
-@keyframes rotation { 
+@keyframes rotation {
 0% {transform: rotate(0deg);}
 100% {transform: rotate(360deg);}
 }
@@ -2074,9 +2078,9 @@ h4 { font-size: 18px; }
 }
 
 #launchScreen{
-     height: 800px; 
-     width: 450px; 
-     background-image:url(../images/iPhone-LaunchScreen.png); 
+     height: 800px;
+     width: 450px;
+     background-image:url(../images/iPhone-LaunchScreen.png);
      background-size:100% 100%;"
 
 }
@@ -2231,7 +2235,7 @@ h4 { font-size: 18px; }
 
 
 @media (max-width: 767px) {
-	
+
 .owl-pagination { display: table; }
 
 .owl-pagination .owl-page { display: table-cell; }
@@ -2310,7 +2314,7 @@ h4 { font-size: 18px; }
 	position: relative;
 }
 
-@-webkit-keyframes laser-blink {  
+@-webkit-keyframes laser-blink {
 	0% {opacity:1;}
 	20% {opacity:0.5;}
 	22% {opacity:0.8;}
@@ -2318,7 +2322,7 @@ h4 { font-size: 18px; }
 	42% {opacity:1;}
 	98% {opacity:0.8;}
 }
-@keyframes laser-blink {  
+@keyframes laser-blink {
 	0% {opacity:1;}
 	20% {opacity:0.5;}
 	22% {opacity:0.8;}
@@ -2333,7 +2337,7 @@ h4 { font-size: 18px; }
 }
 
 
-@-webkit-keyframes highlight-left {  
+@-webkit-keyframes highlight-left {
 	0% {
  		opacity:0;
  		top:100%;
@@ -2350,7 +2354,7 @@ h4 { font-size: 18px; }
 	}
 }
 
-@keyframes highlight-left {  
+@keyframes highlight-left {
 	0% {
  		opacity:0;
  		top:100%;
@@ -2375,7 +2379,7 @@ h4 { font-size: 18px; }
 	margin-top: -100px;
 }
 
-@-webkit-keyframes highlight-right {  
+@-webkit-keyframes highlight-right {
 	0% {
 		opacity:0;
 		top:0;
@@ -2392,7 +2396,7 @@ h4 { font-size: 18px; }
 	}
 }
 
-@keyframes highlight-right {  
+@keyframes highlight-right {
 	0% {
 		opacity:0;
 		top:0;
@@ -2424,13 +2428,13 @@ h4 { font-size: 18px; }
 	right: 70px;
 }
 
-@-webkit-keyframes sunlight-blink {  
+@-webkit-keyframes sunlight-blink {
 	0% {opacity:0;}
 	25%, 75% {opacity:1;}
 	100% {opacity:0;}
 }
 
-@keyframes sunlight-blink {  
+@keyframes sunlight-blink {
 	0% {opacity:0;}
  	25%, 75% {opacity:1;}
  	100% {opacity:0;}
@@ -2441,7 +2445,7 @@ h4 { font-size: 18px; }
 	-webkit-animation: sunlight-blink 5s ease-in 0s infinite;
 }
 
-@-webkit-keyframes sunlight-shapes {  
+@-webkit-keyframes sunlight-shapes {
 	0% {
  		opacity:0;
  		-webkit-transform:scale(0.8);
@@ -2458,7 +2462,7 @@ h4 { font-size: 18px; }
 	}
 }
 
-@keyframes sunlight-shapes {  
+@keyframes sunlight-shapes {
 	0% {
  		opacity:0;
  		transform:scale(0.8);
@@ -2485,12 +2489,12 @@ h4 { font-size: 18px; }
 	-webkit-transform-origin: 80% 10%;
 }
 
-@-webkit-keyframes swim {  
+@-webkit-keyframes swim {
 	0% {-webkit-transform:translateX(0);}
  	100% {-webkit-transform:translateX(470px);}
 }
 
-@keyframes swim {  
+@keyframes swim {
 	0% {transform:translateX(0);}
  	100% {transform:translateX(470px);}
 }
@@ -2679,6 +2683,14 @@ nav.navbar-slide.show-menu { top: 0; }
 	color: #ccc;
 }
 
+.appstore-btn {
+	float: right;
+	cursor: pointer;
+	line-height: 60px;
+	font-size: 24px;
+	padding: 16 20 0 20px;
+	color: #ccc;
+}
 
 @media (max-width: 992px) {
 .navbar-collapse {
@@ -2775,10 +2787,10 @@ aside.blog-sidebar .recent_posts .comments .icon{
 aside.blog-sidebar .tag_cloud h4{border:none;}
 
 .tags{ margin-top:25px;}
-	
-.tags li { 
-	display: inline-block; 
-	padding:0; 
+
+.tags li {
+	display: inline-block;
+	padding:0;
 	}
 
 .tags li a {
@@ -2812,16 +2824,16 @@ aside.blog-sidebar .tag_cloud h4{border:none;}
 
 
 @media (max-width: 992px) {
-	
+
 	aside.blog-sidebar{
 		margin:80px 0 0 0;
 		text-align:center;
 	}
-	
+
 	aside.blog-sidebar .search{padding:0px;}
-	
+
 	aside.blog-sidebar .recent_posts ul li{padding:15px 0;}
-	
+
 	aside.blog-sidebar .recent_posts .comments{
 		padding:0;
 		position:relative;
@@ -2896,8 +2908,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 	padding: 160px 0;
 	z-index: 2;}
 
-.intro-block h1 a{ 
-	color:inherit; 
+.intro-block h1 a{
+	color:inherit;
 	border-bottom:1px solid #fff;
 }
 
@@ -2917,7 +2929,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 ::i-block-chrome, .intro-block #slides,
 ::i-block-chrome, .intro-block .block-bg,
 ::i-block-chrome, .intro-block .block-video-bg {
-	position: fixed !important; 
+	position: fixed !important;
 	-webkit-transform: translateZ(0);}
 }
 
@@ -2951,14 +2963,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 #full-intro { text-align: center; }
 
 } @media (max-width: 767px) {
-	
+
 #blog-intro .container {padding: 100px 0 50px 0;}
 
 .intro-block .container { padding: 80px 0; }
 
 .intro-block .logo { margin: 0 0 20px 0; }
 
-} 
+}
 
 
 
@@ -2982,7 +2994,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 	animation: blink 0.7s infinite;
 }
 
-@keyframes blink { 
+@keyframes blink {
 0% {opacity:1;}
 50% {opacity:0;}
 100% {opacity:1;}
@@ -2994,7 +3006,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 100% {opacity:1;}
 }
 
-@-moz-keyframes blink { 
+@-moz-keyframes blink {
 0% {opacity:1;}
 50% {opacity:0;}
 100% {opacity:1;}
@@ -3024,7 +3036,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 
 .item-list-right.item-list-big li { padding: 0 40px 0px 0px; },
 .item-list-left.item-list-big li { padding: 0 40px 0px 0px; }
- 
+
 } @media (max-width: 992px) and (min-width: 767px) {
 
 .item-list-right.item-list-big li { padding: 0 40px 0px 0px; },
@@ -3058,7 +3070,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 	box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, .7);
 }
 
-@-webkit-keyframes plane {  
+@-webkit-keyframes plane {
 	0% {
  		-webkit-transform: translateY(0);
 		 transform: translateX(0);
@@ -3073,7 +3085,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 	}
 }
 
-@keyframes plane {  
+@keyframes plane {
 	0% {
  		-webkit-transform: translateY(0);
  		-ms-transform: translateY(0);
@@ -3163,10 +3175,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 }
 
 .screen-couple-right .above,
-.screen-couple-left .above { 
-    z-index: 3;    
+.screen-couple-left .above {
+    z-index: 3;
     max-width: 100%;
-    height: auto; 
+    height: auto;
 }
 
 .screen-couple-right .beyond,
@@ -3184,7 +3196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#148dbd', end
 
 #benefits1,
 #benefits2 { font-size: 14px; }
- 
+
 } @media (max-width: 767px) {
 
 .img-block-2col { text-align: center; }
@@ -3547,7 +3559,7 @@ h2.head,
 .post-list {border-top:0;}
 
 .post-list li{ padding:70px 0 20px 0;}
-	
+
 .post-list li:first-child {padding-top:0;}
 
 .post-content img{margin: 0 0 20px 0;}
@@ -3625,30 +3637,30 @@ h2.head,
 
 
 @media (max-width: 992px) {
-	
+
 	#blog {text-align:center;}
 
 } @media (max-width: 320px) {
-	
+
 	section#blog{ padding:50px 0;}
-	
+
 	.post-pagination li{ display:none;}
-	
+
 	.post-pagination li.prev,
 	.post-pagination li.next{ display:inline-block;}
-	
+
 	.post-list .news-info{ margin:0 0 10px 0;}
-	
+
 	.post-list li{ padding:50px 0 10px 0;}
-	
+
 	.news-list {margin-bottom:40px;}
-	
+
 	h2.head,
 	.post-list li h2{
 		font-size: 25px;
 		margin:0 0 10px 0;
 	}
-	
+
 }
 
 
@@ -3925,9 +3937,9 @@ label.error {
 
 #download { padding: 70px 0; }
 
-#download h2 { 
-	color: #fff; 
-	margin:30px 0; 
+#download h2 {
+	color: #fff;
+	margin:30px 0;
 }
 
 #download h2 .icon { margin: 0 20px 0 0; }
@@ -4014,5 +4026,3 @@ footer { padding: 80px 0; }
 
 
 /* Copy and paste other CSS files to prevent render blocking: */
-
-

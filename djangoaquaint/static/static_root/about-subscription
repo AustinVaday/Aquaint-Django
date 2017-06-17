@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/animate.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+
+<body style="text-align:left; padding: 0px 40px 40px 40px;">
+<h1>Aquaint - About Subscription</h1>
+
+<h3>OVERVIEW</h3>
+
+<p>This app is operated by Aquaint. Throughout the app, the terms "we", "us" and "our" refer to Aquaint. Aquaint offers this app, including all information, tools and services available from this app to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.</p>
+
+<p>All purchases made through Aquaint will incur a recurring monthly payment of $9.99 a month until canceled. User will be automatically subscribed to monthly $9.99 payments after 14 day trial comes to an end unless canceled 24-hours prior to initial $9.99 payment.  Payments will be charged to your iTunes Account at the confirmation of purchase.  Monthly payments can only be stopped by canceling your subscription through your iTunes Account settings at least 24-hours before the end of the current period. Your account will be charged for renewal within 24-hours prior to the end of the current period. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.</p>
+
+<p>For more detail, please review our Terms of Service.</p>
+
+<p>Questions about the subscription should be sent to us at <b><a href="mailto:support@aquaint.io?Subject=Privacy%20Policy%20Question">support@aquaint.io</a></b>.</p>
+
+</body>
+</html>
+

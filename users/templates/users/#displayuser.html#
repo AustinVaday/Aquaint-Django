@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:url" content="http://www.aquaint.us">
 <meta name="twitter:title" content="Aquaint.us">
-<meta name="twitter:description" content="Introducing the new era of social networking for social media. Connect with your friends faster, easier, and better than ever before. Seamlessly share all your social media profiles and prove yourself to the world.">
+<meta name="twitter:descripton" content="Introducing the new era of social networking for social media. Connect with your friends faster, easier, and better than ever before. Seamlessly share all your social media profiles and prove yourself to the world.">
 <meta name="twitter:image" content="{% static "images/FBPreview2.1.png" %}">
 
 
@@ -82,10 +82,6 @@
 	<nav class="navbar navbar-fixed-top">
 			<div class="container_fluid">
 				<a class="navbar-brand goto" href="http://www.aquaint.us"> <img src="{% static "images/logo_nav.svg" %}" alt="Your logo" height="38" width="152"> </a>
-
-		    	<a class="appstore-btn" href="https://itunes.apple.com/us/app/aquaint/id1142094794?ls=1&mt=8">
-					<img src="{% static "images/AppStoreBadge.svg" %}" alt="Download on App Store!" height="50%">
-		    	</a>
 				<!-- <a class="contact-btn icon-envelope" data-toggle="modal" data-target="#modalContact"></a>
 				<button class="navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<div class="navbar-collapse navMenuCollapse collapse" style="height: 1px;">
@@ -113,12 +109,10 @@
 			{% else %}
 		      <img src="{{ scancodeimgurl }}" height="180" width="180"\>
 		      <h2> {{ realname }} </h2>
-				{% if fbcompany|length != 0 %}
-                <div class="fb-like" data-href="https://facebook.com/{{ fbcompany }}/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
-				{% endif %}
+                <div class="fb-like" data-href="https://facebook.com/{{ accounts.facebook.0 }}/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 				<br/>
 			  <ul class="soc-list wow flipInX animated" style="visibility: visible;">
-				{% if accounts|length == 0 and iosurl|length == 0 and androidurl|length == 0 %}
+				{% if accounts|length == 0 %}
 					<h3> User has no social media profiles linked! Oh no. </h3>
 				{% endif %}
 
@@ -130,18 +124,6 @@
     						<li><a href="#" onclick="socialClickEventTrigger('{{key}}', '{{val}}');"><i class="icon soc-icon-{{key}}"></i></a></li>
     					{% endfor %}
     				{% endfor %}
-				{% endif %}
-				<br/>
-				<br/>
-				{% if iosurl|length != 0 %}
-					<a href="{{ iosurl }}" style="display:inline-block;">
-						<img src="{% static "images/AppStoreBadge.svg" %}" height="30px" width="135px" alt="Download on App Store!">
-		    		</a>
-				{% endif %}
-				{% if androidurl|length != 0 %}
-					<a href="{{ androidurl }}" style="display:inline-block;">
-						<img src="{% static "images/PlayStoreBadge.svg" %}" height="30px" width="135px" alt="Download on App Store!">
-		    		</a>
 				{% endif %}
 			  </ul>
 			{% endif %}
@@ -166,37 +148,6 @@
     page: location.pathname
   });
 
-  // Create dictionary to fetch native url schemes
-  var nativeUrlSchemes = {
-	//"facebook": "",
-	"snapchat": "snapchat://add/",
-	"instagram": "instagram://user?username=",
-	"twitter": "twitter:///user?screen_name=",
-	"linkedin": "linkedin://profile/view?id=",
-	"youtube": "youtube:www.youtube.com/user/",
-	//"soundcloud": "",
-	"tumblr": "tumblr://x-callback-url/blog?blogName="
-	}
-
-  function attemptOpenNative(nativeUrl, webUrl) {
-      var desktopFallback = webUrl;
-      var mobileFallback = webUrl; 
-      var app = nativeUrl; 
-      if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-      	window.location = app;
-      	window.setTimeout(function() {
-      		window.location = mobileFallback;
-      	}, 25);
-      } else {
-      	window.open(desktopFallback);
-      }
-      function killPopup() {
-      	window.removeEventListener('pagehide', killPopup);
-      }
-      window.addEventListener('pagehide', killPopup);
-
-  }
-
   function socialClickEventTrigger(socialProvider, socialValue) {
     ga('send', {
       hitType: 'event',
@@ -206,15 +157,8 @@
       transport: 'beacon'
     });
 
-    if (socialProvider != "website" ) {
-	  var webUrl = 'https://' + socialProvider + '.com/' + socialValue; 
-	  if (socialProvider in nativeUrlSchemes) {
-		var nativeUrl = nativeUrlSchemes[socialProvider] + socialValue
-		attemptOpenNative(nativeUrl, webUrl);	
-	  } else {
-		window.open(webUrl);
-	  }
-      //window.open('https://' + socialProvider + '.com/' + socialValue);
+    if (socialProvider != "website") {
+      window.open('https://' + socialProvider + '.com/' + socialValue);
     } else {
       window.open(socialValue);
     }
@@ -244,8 +188,9 @@
 
 	<!-- FOOTER BEGIN -->
 	<footer id="footer">
-		    <a href="https://itunes.apple.com/us/app/aquaint/id1142094794?ls=1&mt=8">
-				<img src="{% static "images/AppStoreBadge.svg" %}" alt="Download on App Store!">
+		    <a class="download-btn ios-btn" href="https://itunes.apple.com/us/app/aquaint/id1142094794?ls=1&mt=8">
+            	    <div class="btn-slide"></div>
+            	    <div class="btn-content"><i class="icon soc-icon-apple"></i>Download for <b>iPhone</b></div>
 		    </a>
 		<div class="container">
 			<br/>
