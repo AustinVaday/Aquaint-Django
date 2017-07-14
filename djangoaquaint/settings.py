@@ -26,9 +26,9 @@ SECRET_KEY = 'ebenrqbik!#*ocpai38-#k=^p$tyd50$8&7q-0$^vo72zh=3gd'
 DEBUG = False 
 
 ALLOWED_HOSTS = [
-    '54.226.81.185',
     'www.aquaint.us',
-    'aquaint.us'
+    'aquaint.us',
+    '.elb.amazonaws.com'
 ]
 
 
