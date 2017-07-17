@@ -23,12 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ebenrqbik!#*ocpai38-#k=^p$tyd50$8&7q-0$^vo72zh=3gd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.aquaint.us',
     'aquaint.us',
-    '.elb.amazonaws.com'
+    '.elb.amazonaws.com',
+    '52.91.181.251'
 ]
 
 
