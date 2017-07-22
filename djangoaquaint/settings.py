@@ -23,13 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ebenrqbik!#*ocpai38-#k=^p$tyd50$8&7q-0$^vo72zh=3gd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.aquaint.us',
     'aquaint.us',
     '.elb.amazonaws.com',
-    '52.91.181.251'
+    '52.91.181.251',  # IP address of "the main" aquaint-web EC2 server
+    '127.0.0.1'
 ]
 
 
@@ -53,6 +54,25 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'users.awsbackend.CognitoBackend'
+]
+
+COGNITO_USER_POOL_ID = 'us-east-1_yyImSiaeD'
+
+COGNITO_APP_ID = '4dc7abqcmfsbi6v00765cohu8p'
+
+COGNITO_ATTR_MAPPING = (
+    {
+        'email': 'email',
+        #'given_name': 'first_name',
+        #'family_name': 'last_name',
+        'custom:email_verified': 'email_verified',
+        'custom:phone_number_verified': 'phone_number_verified',
+        'custom:phone_number': 'phone_number'
+    })
+
 
 ROOT_URLCONF = 'djangoaquaint.urls'
 
