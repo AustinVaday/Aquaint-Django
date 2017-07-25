@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.conf import settings
+from warrant import Cognito
 import awsdata 
 
 
@@ -13,6 +16,33 @@ def index(request):
 
 # def authentication(request):
 #     return render(request, 'users/userlogin.html')
+
+def user_signup(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = UserCreationForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            print 'User signup form valid.'
+            print form.cleaned_data
+
+            cognito = Cognito(
+                settings.COGNITO_USER_POOL_ID,
+                settings.COGNITO_APP_ID)
+            cognito.register(form.cleaned_data['username'], form.cleaned_data['password1'], email='dummy@aquaint.us')
+
+            print 'User signing up done.'
+            # redirect to a new URL:
+            return HttpResponseRedirect('/user/' + form.cleaned_data['username'])
+        else:
+            print 'User signup form invalid.'
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'users/usersignup.html', {'form': form})
+
 
 # Create your views here.
 def info(request, user):
