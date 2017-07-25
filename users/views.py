@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import awsdata 
 
 
@@ -7,7 +7,13 @@ def isFBUID(username):
     return username.isdigit() and (len(username) == 16 or len(username) == 17)
 
 def index(request):
-    return render(request, 'users/displayuser.html', {'error':1}) 
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/user/' + request.user.username)
+    return render(request, 'users/displayuser.html', {'error':1})
+
+# def authentication(request):
+#     return render(request, 'users/userlogin.html')
+
 # Create your views here.
 def info(request, user):
     data = awsdata.get_user_data(user)

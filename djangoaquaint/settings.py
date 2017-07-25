@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'aquaint.us',
     '.elb.amazonaws.com',
     '52.91.181.251',  # IP address of "the main" aquaint-web EC2 server
+    '34.201.216.70',  # IP address of "aquaint-web-protoype" developing EC2 server
     '127.0.0.1'
 ]
 
@@ -58,6 +59,8 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = [
     'users.awsbackend.CognitoBackend'
 ]
+
+LOGIN_REDIRECT_URL = '/user/'
 
 COGNITO_USER_POOL_ID = 'us-east-1_yyImSiaeD'
 
