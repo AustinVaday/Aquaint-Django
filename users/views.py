@@ -1,21 +1,50 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
-from warrant import Cognito
 from forms import SignUpForm
-import awsdata 
+import boto3
+import json
+from warrant import Cognito
+import awsdata
+import time
 
 
 def isFBUID(username):
     return username.isdigit() and (len(username) == 16 or len(username) == 17)
 
 def completeUserRegistration(form):
-        cognito = Cognito(
-            settings.COGNITO_USER_POOL_ID,
-            settings.COGNITO_APP_ID)
-        cognito.register(form.cleaned_data['username'], form.cleaned_data['password1'], email='dummy@aquaint.us')
+    # create Cognito user
+    cognito = Cognito(
+        settings.COGNITO_USER_POOL_ID,
+        settings.COGNITO_APP_ID)
+    cognito.register(
+        form.cleaned_data['username'],
+        form.cleaned_data['password1'],
+        email=form.cleaned_data['email'])
 
+    # generate user scan code on Lambda
+    lambda_payload = {
+        'action': 'createScanCodeForUser',
+        'target': form.cleaned_data['username'].lower()}
+    lambda_client_response = boto3.client('lambda').invoke(
+        FunctionName='mock_api',
+        InvocationType='Event',
+        LogType='None',
+        Payload=json.dumps(lambda_payload))
+    if lambda_client_response['StatusCode'] != 202:
+        print('Error generating user scan code: ' + lambda_client_response)
     
+    # create empty user entry on DynamoDB
+    user_dynamodb_table = boto3.resource('dynamodb').Table('aquaint-users')
+    user_dynamodb_table.put_item(
+        Item={
+            'username': form.cleaned_data['username'].lower(),
+            'realname': form.cleaned_data['fullname']
+            })
+    
+    # TODO: workaround to wait lambda finish generating user's scan code
+    time.sleep(4)
+
 def index(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('/user/' + request.user.username)
@@ -35,7 +64,7 @@ def user_signup(request):
             print 'User signup form valid.'
             print form.cleaned_data
 
-            #completeUserRegistration(form)
+            completeUserRegistration(form)
 
             print 'User signing up done.'
             # redirect to a new URL:
