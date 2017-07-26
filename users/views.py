@@ -1,14 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
 from django.conf import settings
 from warrant import Cognito
+from forms import SignUpForm
 import awsdata 
 
 
 def isFBUID(username):
     return username.isdigit() and (len(username) == 16 or len(username) == 17)
 
+def completeUserRegistration(form):
+        cognito = Cognito(
+            settings.COGNITO_USER_POOL_ID,
+            settings.COGNITO_APP_ID)
+        cognito.register(form.cleaned_data['username'], form.cleaned_data['password1'], email='dummy@aquaint.us')
+
+    
 def index(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('/user/' + request.user.username)
@@ -21,17 +28,14 @@ def user_signup(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
             print 'User signup form valid.'
             print form.cleaned_data
 
-            cognito = Cognito(
-                settings.COGNITO_USER_POOL_ID,
-                settings.COGNITO_APP_ID)
-            cognito.register(form.cleaned_data['username'], form.cleaned_data['password1'], email='dummy@aquaint.us')
+            #completeUserRegistration(form)
 
             print 'User signing up done.'
             # redirect to a new URL:
@@ -39,7 +43,7 @@ def user_signup(request):
         else:
             print 'User signup form invalid.'
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
 
     return render(request, 'users/usersignup.html', {'form': form})
 

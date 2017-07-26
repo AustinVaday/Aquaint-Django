@@ -1,5 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
-# TODO: custom entries will be added in, extends from UserCreationForm
-class SignUpForm(forms.Form):
-    username = forms.CharField(label='Username', max_length=100)
+class SignUpForm(UserCreationForm):
+    fullname = forms.CharField(label='Full Name', max_length=100)
+    email = forms.EmailField(label='Email', max_length=100)
