@@ -14,7 +14,7 @@ def index(request):
         return HttpResponseRedirect('/user/' + request.user.username)
     return render(request, 'users/displayuser.html', {'error':1})
 
-# def authentication(request):
+# def user_authentication(request):
 #     return render(request, 'users/userlogin.html')
 
 def user_signup(request):
